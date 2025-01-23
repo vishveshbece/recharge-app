@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 5000;
 const jwt = require('jsonwebtoken');
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: "https://rechargeapp-d47c6.web.app" }));
 app.use(express.json());
 mongoose.connect("mongodb+srv://vishvesh:vishvesh2005@cluster0.cetal.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",{ useNewUrlParser: true, useUnifiedTopology: true },{
     connectTimeoutMS : 10000,
