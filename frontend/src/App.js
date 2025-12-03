@@ -20,7 +20,7 @@ function App() {
         if(!user){
           handleSwitchToLogin();
         }
-        const response= await axios.post("http://localhost:5000/api/users/addchannel",{pack,mailid:memoiseduser});
+        const response= await axios.post("https://recharge-app-1-innv.onrender.com/api/users/addchannel",{pack,mailid:memoiseduser});
         if(response.status === 200){
           alert('channel added to the cart');
         }
@@ -31,7 +31,7 @@ function App() {
     const handleaddpack = async(channel)=>{
       if(!user){navigate('/login')}
       try{
-        const response= await axios.post("http://localhost:5000/api/users/addpack",{channel,mailid:memoiseduser});
+        const response= await axios.post("https://recharge-app-1-innv.onrender.com/api/users/addpack",{channel,mailid:memoiseduser});
         if(response.status === 200){
           alert('pack added to the cart');
         }
@@ -41,7 +41,7 @@ function App() {
     }
     const handlegetchannel = useCallback(async()=>{
       try{
-        const response= await axios.get("http://localhost:5000/api/users/getchannel",{params:{mailid:memoiseduser},});
+        const response= await axios.get("https://recharge-app-1-innv.onrender.com/api/users/getchannel",{params:{mailid:memoiseduser},});
         if(response.status === 200){
           return response.data;
         }
@@ -51,7 +51,7 @@ function App() {
     },[memoiseduser]);
     const handlegetpack = useCallback(async()=>{
       try{
-        const response= await axios.get("http://localhost:5000/api/users/getpack",{params:{mailid:memoiseduser},});
+        const response= await axios.get("https://recharge-app-1-innv.onrender.com/api/users/getpack",{params:{mailid:memoiseduser},});
         if(response.status ===200){
           return response.data;
         }
@@ -61,7 +61,7 @@ function App() {
     },[memoiseduser]);
     const handleremovepack = async(index)=>{
       try{
-        const response= await axios.delete("http://localhost:5000/api/users/removepack",{data:{index,mailid:memoiseduser}});
+        const response= await axios.delete("https://recharge-app-1-innv.onrender.com/api/users/removepack",{data:{index,mailid:memoiseduser}});
         if(response.status === 200){
           alert('pack removed from the cart');
           return response.data;
@@ -72,7 +72,7 @@ function App() {
     }
     const handleremovechannel = async(index)=>{
       try{
-        const response= await axios.delete("http://localhost:5000/api/users/removechannel",{data:{index,mailid:memoiseduser}});
+        const response= await axios.delete("https://recharge-app-1-innv.onrender.com/api/users/removechannel",{data:{index,mailid:memoiseduser}});
         if(response.status === 200){
           alert('channel removed from the cart');
           return response.data;
@@ -84,7 +84,7 @@ function App() {
     const handleLogin = async(username,password)=>{
       try
       {
-          const response = await axios.post("http://localhost:5000/api/users/login",{mailid: username, password,});
+          const response = await axios.post("https://recharge-app-1-innv.onrender.com/api/users/login",{mailid: username, password,});
           if(response.status === 200)
           {
               const token = response.data.token;
