@@ -6,7 +6,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 const jwt = require('jsonwebtoken');
 
-app.use(cors({ origin: "https://rechargeapp-d47c6.web.app" }));
+app.use(cors({ origin: "https://recharge-app-8pa9.vercel.app" }));
 app.use(express.json());
 
 // ✅ UPDATED MONGO URI
