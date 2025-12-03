@@ -42,7 +42,7 @@ function Register({ onSwitchToLogin }) {
     };
     const handleSubmit = async () => {
         try{
-            const response = await axios.post("http://localhost:5000/api/users",{firstname, lastname, phone, mailid, password});
+            const response = await axios.post("https://recharge-app-1-innv.onrender.com/api/users",{firstname, lastname, phone, mailid, password});
             if(response.status === 201){
                 alert("registered successfully");
                 navigate('/login');
